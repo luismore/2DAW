@@ -1,0 +1,33 @@
+        .imagen {
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .imagen img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .imagen .text {
+            max-width: 600px;
+        }
+
+        .imagen.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .imagen h2 {
+            margin: 0 0 5px;
+            font-size: 18px;
+        }
+
+        .imagen p {
+            margin: 0;
+            font-size: 14px;
+        }

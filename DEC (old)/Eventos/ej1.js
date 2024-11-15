@@ -1,0 +1,3 @@
+function saltaAlert(){
+    alert("Hola");
+}

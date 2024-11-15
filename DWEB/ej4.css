@@ -1,0 +1,13 @@
+div{
+    background-color: lightgrey;
+}
+
+div div{
+    background-color: lightblue;
+    color: white;
+}
+
+#abuelo{
+    border: 1px solid blue;
+    padding: 10px;
+}

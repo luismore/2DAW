@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="EJ4.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2>Welcome to Crowdrise</h2>
+            <p>Let's get you all set up so you can verify your nonprofit and begin setting up your first campaign!</p>
+
+            <form id="registrationForm">
+                <div class="input-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                <div class="input-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="subscribe">
+                    <label for="subscribe">Yes, I want to receive Crowdrise's emails</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agree" required>
+                    <label for="agree">I agree to the Terms, Privacy Policy, and Fees</label>
+                </div>
+                <button type="submit" id="submitButton" disabled>Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="EJ4.js"></script>
+</body>
+</html>

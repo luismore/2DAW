@@ -1,0 +1,24 @@
+li{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    list-style-type: upper-alpha;
+}
+
+h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: darkred;
+}
+
+.copia{
+    background-color: yellow;
+}
+
+.copia li{
+    list-style-type: square;
+    background-color: grey;
+}
+
+.copia2 li{
+    margin-left: 400px;
+    list-style-image: url("https://ih1.redbubble.net/image.1365906178.8500/raf,360x360,075,t,fafafa:ca443f4786.jpg");
+}
+

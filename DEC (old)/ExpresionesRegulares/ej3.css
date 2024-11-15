@@ -1,0 +1,48 @@
+        /* Estilos del contenedor */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f38b8b;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            color: #fef3d5;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid #fef3d5;
+            background: transparent;
+            color: #fef3d5;
+            font-size: 18px;
+            outline: none;
+        }
+        .rules {
+            list-style: none;
+            padding: 0;
+            font-size: 14px;
+        }
+        .rules li {
+            margin: 5px 0;
+        }
+        .submit-btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: #f7a8a8;
+            color: #fef3d5;
+            font-size: 16px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        .submit-btn:disabled {
+            cursor: not-allowed;
+        }
+        .submit-btn.enabled {
+            opacity: 1;
+        }
