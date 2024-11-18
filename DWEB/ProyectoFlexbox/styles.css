@@ -1,0 +1,50 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    font-family: Indie flower;
+    font-size: 16px;
+}
+
+.flexbox-nav{
+    display: flex;
+    flex-direction: row;
+    
+    background-color: #ff9408;
+    width: 100%;
+    height: 15vh;
+    justify-content: center;
+}
+
+.elem-nav{
+    margin: 20px;
+    width:25vh;
+    text-align: center;
+    top: 50%;
+}
+
+.home{
+    background-color: #017374;
+}
+
+.aboutme{
+    background-color: #01727498;
+}
+
+.services{
+    background-color: #017374;
+}
+
+.skills{
+    background-color: #01727498;
+}
+
+.portfolio{
+    background-color: #017374;
+}
+
+.contact{
+    background-color: #01727498;
+}
