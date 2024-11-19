@@ -4,7 +4,7 @@
 }
 
 body{
-    font-family: Indie flower;
+    font-family: Cascade Code;
     font-size: 16px;
 }
 
@@ -12,7 +12,7 @@ body{
     display: flex;
     flex-direction: row;
     
-    background-color: #ff9408;
+    background-color: #114B5F;
     width: 100%;
     height: 15vh;
     justify-content: center;
@@ -26,25 +26,25 @@ body{
 }
 
 .home{
-    background-color: #017374;
+    background-color: #1A936F;
 }
 
 .aboutme{
-    background-color: #01727498;
+    background-color: #88D498;
 }
 
 .services{
-    background-color: #017374;
+    background-color: #1A936F;
 }
 
 .skills{
-    background-color: #01727498;
+    background-color: #88D498;
 }
 
 .portfolio{
-    background-color: #017374;
+    background-color: #1A936F;
 }
 
 .contact{
-    background-color: #01727498;
+    background-color: #88D498;
 }
