@@ -1,114 +1,71 @@
+let bolas = [];
+let svgNS = "http://www.w3.org/2000/svg";
+
 window.onload = () => {
-
-    var bolas = new Array;
-
-for (let i = 0; i < 10; i++) {
-    bolas.push(new bola("juego", getRandomInt(), getRandomInt(), getRandomInt(), getRandomInt(), getRandomInt(),getRandomInt()));
-}
-
-
-function getRandomInt(){
-    return Math.floor(Math.random() * 10) + 1;
-}
-
-
-creaTag(svgPadre){
     
+    for (let i = 0; i < 1000; i++) {
+        bolas.push(new Bola("juego", getRandomInt(300), getRandomInt(300), getRandomInt(20, 50), getRandomInt(-5, 5), getRandomInt(-5, 5), 1152, 864));
+    }
+
+    setInterval(() => {
+        bolas.forEach(bola => bola.mover());
+    }, 30); 
 }
 
-
-
-class bola{
-    constructor(svgPadre,x,y,r,velx,vely){
-        this.svgPadre = svgPadre;
-        this.x = x;
-        this.y = y;
-        this.r = r;
-        this.velx = velx;
-        this.vely = vely;
-} 
-
-
-    var posicionX = 50;
-    var limiteX = 1000;
-    var r = 40;
-    var velocidadX = Math.random() * 10 - 1;
-
-
-    var posicionY = 50;
-    var limiteY = 1000;
-    var velocidadY = Math.random() * 10 - 1;
-
-    setInterval(()=>{}, 1)}
-
-    mover(){
-                
-        posicionX += velocidadX;
-        
-        bola.setAttribute("cx", posicionX);
-        if((posicionX+r)> limiteX){
-        velocidadX *= -1;
-        }
-        else if((posicionX-r)<0){
-            velocidadX *= -1;
-        }
-
-        posicionY += velocidadY;
-     
-        bola.setAttribute("cy", posicionY);
-        if((posicionY+r)> limiteY){
-        velocidadY *= -1;
-        }
-        else if((posicionY-r)<0){
-            velocidadY *= -1;
-        }
-
+class Bola {
+    constructor(svgPadre, x = 50, y = 50, radio = 50, velX = 125, velY = 105, tamanoX = 1152, tamanoY = 864) {
+        this.posicionX = x;
+        this.posicionY = y;
+        this.r = radio;
+        this.velocidadX = velX;
+        this.velocidadY = velY;
+        this.limiteX = tamanoX;
+        this.limiteY = tamanoY;
+        this.elemento = this.crearTag(svgPadre);
+        this.elemento.addEventListener('mouseover', () => this.eliminar());
     }
 
+    crearTag(svgPadre) {
+        let bola = document.createElementNS(svgNS, "circle");
+        bola.setAttribute("cx", this.posicionX);
+        bola.setAttribute("cy", this.posicionY);
+        bola.setAttribute("r", this.r);
+        bola.setAttribute("fill", this.random_rgba());
+        document.getElementById(svgPadre).appendChild(bola);
+        return bola;
     }
 
+    mover() {
+        this.posicionX += this.velocidadX;
+        this.posicionY += this.velocidadY;
 
+        if (this.posicionX - this.r <= 0 || this.posicionX + this.r >= this.limiteX) {
+            this.velocidadX *= -1;
+        }
+        if (this.posicionY - this.r <= 0 || this.posicionY + this.r >= this.limiteY) {
+            this.velocidadY *= -1;
+        }
 
+        this.actualizarPosicion();
+    }
+    actualizarPosicion() {
+        this.elemento.setAttribute("cx", this.posicionX);
+        this.elemento.setAttribute("cy", this.posicionY);
+    }
 
+    eliminar() {
+        this.elemento.remove();
+        let index = bolas.indexOf(this);
+        if (index > -1) {
+            bolas.splice(index, 1);
+        }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //     posicionX += velocidadX;
-        
-    //     bola.setAttribute("cx", posicionX);
-    //     if((posicionX+r)> limiteX){
-    //     velocidadX *= -1;
-    //     }
-    //     else if((posicionX-r)<0){
-    //         velocidadX *= -1;
-    //     }
-
-    //     posicionY += velocidadY;
-        
-    //     bola.setAttribute("cy", posicionY);
-    //     if((posicionY+r)> limiteY){
-    //     velocidadY *= -1;
-    //     }
-    //     else if((posicionY-r)<0){
-    //         velocidadY *= -1;
-    //     }
-
-    // }, 1)
+    random_rgba() {
+        let o = Math.round, r = Math.random, s = 255;
+        return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+    }
+}
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
