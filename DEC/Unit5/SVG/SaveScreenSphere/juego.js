@@ -4,7 +4,7 @@ let svgNS = "http://www.w3.org/2000/svg";
 window.onload = () => {
     
     for (let i = 0; i < 1000; i++) {
-        bolas.push(new Bola("juego", getRandomInt(300), getRandomInt(300), getRandomInt(20, 50), getRandomInt(-5, 5), getRandomInt(-5, 5), 1152, 864));
+        bolas.push(new Bola("juego", getRandomInt(300), getRandomInt(300), getRandomInt(20, 50), getRandomInt(-5, 5), getRandomInt(-5, 5), 1920, 1080));
     }
 
     setInterval(() => {
@@ -13,14 +13,14 @@ window.onload = () => {
 }
 
 class Bola {
-    constructor(svgPadre, x = 50, y = 50, radio = 50, velX = 125, velY = 105, tamanoX = 1152, tamanoY = 864) {
+    constructor(svgPadre, x = 50, y = 50, radio = 50, velX = 125, velY = 105, sizeX = 1920, sizeY = 1080) {
         this.posicionX = x;
         this.posicionY = y;
         this.r = radio;
         this.velocidadX = velX;
         this.velocidadY = velY;
-        this.limiteX = tamanoX;
-        this.limiteY = tamanoY;
+        this.limiteX = sizeX;
+        this.limiteY = sizeY;
         this.elemento = this.crearTag(svgPadre);
         this.elemento.addEventListener('mouseover', () => this.eliminar());
     }
