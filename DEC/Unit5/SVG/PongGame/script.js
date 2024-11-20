@@ -5,7 +5,7 @@ let svgNS = "http://www.w3.org/2000/svg";
 
 window.onload = () => {
 
-    bolas.push(new Bola("juego", 50, 50, 50, 50, 50, 1920, 1080));
+    bolas.push(new Bola("juego", 50, 50, 50, 50, 50, 1920, 1000));
 
     barras.push(new Barra("juego", 10, 200, 0, 0));
     barras.push(new Barra("juego", 10, 200, 0, 1910));
@@ -78,6 +78,7 @@ class Bola {
             this.posicionY = By;
             this.posicionX = Bx;
             this.velocidadY = 0;
+            this.limiteY = 1000;
 
             this.elemento = this.crearTag(svgPadre);
 
@@ -110,7 +111,10 @@ class Bola {
             this.velocidadY = 5;
             this.posicionY += this.velocidadY;
 
+            if (this.posicionY = 0){this.velocidadY=0;}
+
         this.actualizarPosicion();
+        
     }
 
     moverArribaDer(){
@@ -118,7 +122,9 @@ class Bola {
         this.velocidadY = 5;
         this.posicionY += this.velocidadY;
 
+        if (this.posicionY = 0){this.velocidadY=0;}
         this.actualizarPosicion();
+
     }
 
     moverAbajoIzq(){
@@ -126,7 +132,10 @@ class Bola {
         this.velocidadY = 5;
         this.posicionY += this.velocidadY;
 
+
+        if (this.posicionY = 1000){this.velocidadY=0;}
         this.actualizarPosicion();
+
     }
 
     moverAbajoDer(){
@@ -134,10 +143,10 @@ class Bola {
         this.velocidadY = 5;
         this.posicionY += this.velocidadY;
 
+        if (this.posicionY = 1000){this.velocidadY=0;}
         this.actualizarPosicion();
+
     }
-
-
 
 
     actualizarPosicion() {
