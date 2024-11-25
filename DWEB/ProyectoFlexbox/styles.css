@@ -1,50 +1,227 @@
-*{
-    padding: 0%;
-    margin: 0%;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family: Cascade Code;
+body {
+    font-family: Cascadia Code, monospace;
     font-size: 16px;
+    line-height: 1.6;
 }
 
-.flexbox-nav{
+/* Navbar */
+.flexbox-nav {
     display: flex;
-    flex-direction: row;
-    
+    flex-wrap: wrap;
     background-color: #114B5F;
-    width: 100%;
-    height: 15vh;
     justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.elem-nav{
-    margin: 20px;
-    width:25vh;
+.elem-nav {
+    flex: 1 1 auto;
+    padding: 10px 20px;
     text-align: center;
-    top: 50%;
+    color: white;
+    cursor: pointer;
 }
 
-.home{
+.elem-nav:hover {
+    background-color: #0d3948;
+}
+
+.elem-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Section Home */
+.home {
+    padding: 2rem;
+    text-align: center;
+}
+
+.home .HomeText {
+    margin-bottom: 1.5rem;
+}
+
+#gearIcon {
+    font-size: 8rem;
+    color: #1A936F;
+}
+
+/* About Me */
+.aboutme {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutme img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 1rem;
+}
+
+.AboutMeText {
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Services */
+.services {
+    padding: 2rem;
+}
+
+.flexServices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.servicesItems {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.servicesItems i {
+    font-size: 2rem;
+    color: #1A936F;
+}
+
+.titleServices {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+/* Skills */
+.skills {
+    padding: 2rem;
+}
+
+.habilidades {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.habilidades label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.habilidades progress {
+    width: 80%;
+    height: 20px;
+    appearance: none;
+}
+
+/* Custom progress bar styles */
+progress::-webkit-progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
     background-color: #1A936F;
+    border-radius: 10px;
+    animation: fillProgress 1.5s ease-in-out;
 }
 
-.aboutme{
-    background-color: #88D498;
-}
-
-.services{
+progress::-moz-progress-bar {
     background-color: #1A936F;
+    border-radius: 10px;
+    animation: fillProgress 1.5s ease-in-out;
 }
 
-.skills{
-    background-color: #88D498;
+@keyframes fillProgress {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
-.portfolio{
+/* Contact Form */
+.contact {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact button {
     background-color: #1A936F;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.contact{
-    background-color: #88D498;
+.contact button:hover {
+    background-color: #0d3948;
+}
+
+.title {
+    position: relative;
+    top: -40px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .flexbox-nav {
+        flex-direction: column;
+    }
+
+    #gearIcon {
+        font-size: 5rem;
+    }
+
+    .aboutme {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .flexServices {
+        flex-direction: column;
+    }
+
+    .habilidades progress {
+        width: 90%;
+    }
+
+    .servicesItems{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
 }
