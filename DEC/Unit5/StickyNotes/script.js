@@ -8,6 +8,9 @@ getNotes().forEach((note) =>{
 
 addNoteButton.addEventListener("click", () => addNote());
 
+
+//Funciones
+
 function getNotes(){
     return JSON.parse(localStorage.getItem("stickynotes-notes") || "[]");
 
@@ -53,7 +56,7 @@ function addNote(){
     saveNotes(notes);
 
 }
-
+ 
 function updateNotes(id, newContent){
     const notes = getNotes();
     const targetNote = notes.filter((note) => note.id == id)[0];
